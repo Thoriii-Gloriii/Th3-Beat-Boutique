@@ -107,7 +107,7 @@ export default function VocalBoothRecorder() {
             <>
               <audio src={audioUrl} controls className="hidden" id="vocal-playback" />
               <button
-                onClick={() => document.getElementById('vocal-playback')?.play()}
+                onClick={() => (document.getElementById('vocal-playback') as HTMLAudioElement)?.play()}
                 className="flex items-center gap-2 px-4 py-2 bg-white/10 border border-white/20 rounded-full text-white text-sm font-bold hover:bg-white/20 transition-all"
               >
                 <Play className="w-4 h-4 fill-white" />
