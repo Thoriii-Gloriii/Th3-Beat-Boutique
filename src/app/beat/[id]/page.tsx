@@ -4,6 +4,17 @@ import VocalBoothRecorder from '@/components/store/VocalBoothRecorder';
 import Link from 'next/link';
 import { ArrowLeft } from 'lucide-react';
 
+export function generateStaticParams() {
+  return [
+    { id: '1' },
+    { id: '2' },
+    { id: '3' },
+    { id: '4' },
+    { id: '5' },
+    { id: '6' },
+  ];
+}
+
 export default function BeatPage({ params }: { params: { id: string } }) {
   return (
     <div className="p-4 flex flex-col gap-6 w-full max-w-2xl mx-auto pb-24">
