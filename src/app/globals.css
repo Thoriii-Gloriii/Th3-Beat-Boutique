@@ -3,10 +3,11 @@
 :root {
   --background: #000000;
   --foreground: #ffffff;
-  --surface: #1C1C1C;
-  --primary-red: #E60023; /* Neon Red */
-  --primary-red-glow: rgba(230, 0, 35, 0.4);
-  --muted-text: #9ca3af;
+  --surface: #260000; /* Darkest Red (Bar 2) */
+  --surface-highlight: #590000; /* Mid Dark Red (Bar 3) */
+  --primary-red: #d10000; /* Bright Red (Bar 4) */
+  --primary-red-glow: rgba(255, 0, 0, 0.5); /* Pure Red (Bar 5) glow */
+  --muted-text: #ffb3b3; /* Muted red-tinted text */
 }
 
 @theme inline {

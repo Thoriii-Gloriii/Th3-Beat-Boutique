@@ -1,5 +1,6 @@
 'use client';
 
+import Link from 'next/link';
 import { Play, Clock } from 'lucide-react';
 import { Beat } from '@/types';
 
@@ -18,7 +19,7 @@ export default function BeatCard({ beat }: { beat: Beat }) {
   const timeLeft = getTimeLeft(beat.auctionEndTime);
 
   return (
-    <div className="glass rounded-2xl overflow-hidden border border-white/5 hover:border-[var(--primary-red)]/40 transition-all duration-300 group cursor-pointer hover:-translate-y-1 hover:neon-glow">
+    <Link href={`/beat/${beat.id}`} className="block glass rounded-2xl overflow-hidden border border-white/5 hover:border-[var(--primary-red)]/40 transition-all duration-300 group cursor-pointer hover:-translate-y-1 hover:neon-glow">
       {/* Cover Art */}
       <div className="relative aspect-square bg-black/60 overflow-hidden">
         {beat.coverArtUrl ? (
@@ -85,6 +86,6 @@ export default function BeatCard({ beat }: { beat: Beat }) {
           </div>
         </div>
       </div>
-    </div>
+    </Link>
   );
 }
