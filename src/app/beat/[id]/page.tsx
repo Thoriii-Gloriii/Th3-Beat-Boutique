@@ -5,13 +5,6 @@ import Link from 'next/link';
 import { ArrowLeft } from 'lucide-react';
 
 export default function BeatPage({ params }: { params: { id: string } }) {
-  const mockStems = [
-    { name: 'Drums', color: '#FF0000', src: '/mock-drums.mp3' },
-    { name: 'Bass/808', color: '#590000', src: '/mock-bass.mp3' },
-    { name: 'Melody', color: '#d10000', src: '/mock-melody.mp3' },
-    { name: 'FX', color: '#ffb3b3', src: '/mock-fx.mp3' },
-  ];
-
   return (
     <div className="p-4 flex flex-col gap-6 w-full max-w-2xl mx-auto pb-24">
       <Link href="/" className="flex items-center gap-2 text-[var(--muted-text)] hover:text-white transition-colors text-xs font-bold mt-2">
@@ -35,10 +28,10 @@ export default function BeatPage({ params }: { params: { id: string } }) {
       {/* Advanced Audio Tools */}
       <div className="mt-4 flex flex-col gap-4">
         <h3 className="text-white font-black text-lg uppercase tracking-widest mb-2 border-b border-white/10 pb-2">Stem Mixer</h3>
-        <InteractiveStemPlayer stems={mockStems} />
+        <InteractiveStemPlayer />
         
         <h3 className="text-white font-black text-lg uppercase tracking-widest mb-2 mt-4 border-b border-white/10 pb-2">Vocal Scratchpad</h3>
-        <VocalBoothRecorder beatTitle="Midnight City" />
+        <VocalBoothRecorder />
       </div>
     </div>
   );
