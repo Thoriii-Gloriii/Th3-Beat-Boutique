@@ -2,8 +2,8 @@
 
 import { useState } from 'react';
 
-const GENRES = ['The Future', 'Rock', 'Hip Hop', 'R&B', 'Cinematic'];
-const MOODS = ['Storytelling', 'Resilient', 'Energetic', 'Dark'];
+const GENRES = ['The Future', 'Hip Hop', 'Trap', 'R&B', 'Rock', 'Cinematic', 'Alternative', 'Experimental'];
+const MOODS = ['Dark', 'Energetic', 'Storytelling', 'Melancholic', 'Aggressive', 'Chill', 'Emotional'];
 
 export default function FilterBar() {
   const [activeGenre, setActiveGenre] = useState('The Future');

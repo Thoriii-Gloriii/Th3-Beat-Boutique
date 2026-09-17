@@ -4,7 +4,7 @@ import BeatCard from './BeatCard';
 import { Beat } from '@/types';
 
 // Placeholder beats for dev/preview
-const MOCK_BEATS: Beat[] = [
+export const MOCK_BEATS: Beat[] = [
   {
     id: '1',
     title: 'Dark Horizon',
@@ -79,21 +79,39 @@ const MOCK_BEATS: Beat[] = [
   },
 ];
 
-export default function BeatGrid() {
+interface BeatGridProps {
+  title?: string;
+  beats?: Beat[];
+  limit?: number;
+  showRank?: boolean;
+}
+
+export default function BeatGrid({ title = 'Live Auctions', beats = MOCK_BEATS, limit, showRank }: BeatGridProps) {
+  const displayBeats = limit ? beats.slice(0, limit) : beats;
+
   return (
     <div className="px-4 py-4">
-      <div className="flex items-center justify-between mb-4">
-        <h2 className="text-white font-bold text-base uppercase tracking-widest">
-          Live Auctions
-        </h2>
-        <button className="text-[var(--primary-red)] text-xs font-semibold uppercase tracking-wider hover:underline">
-          See All
-        </button>
-      </div>
+      {title && (
+        <div className="flex items-center justify-between mb-4">
+          <h2 className="text-white font-black text-lg uppercase tracking-widest">
+            {title}
+          </h2>
+          <button className="text-[var(--primary-red)] text-xs font-semibold uppercase tracking-wider hover:underline">
+            See All
+          </button>
+        </div>
+      )}
 
       <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-3">
-        {MOCK_BEATS.map((beat) => (
-          <BeatCard key={beat.id} beat={beat} />
+        {displayBeats.map((beat, idx) => (
+          <div key={beat.id} className="relative">
+            {showRank && (
+              <div className="absolute -top-2 -left-2 w-6 h-6 bg-[var(--primary-red)] text-white font-black rounded-full flex items-center justify-center z-20 border-2 border-black neon-glow text-xs">
+                #{idx + 1}
+              </div>
+            )}
+            <BeatCard beat={beat} />
+          </div>
         ))}
       </div>
     </div>
