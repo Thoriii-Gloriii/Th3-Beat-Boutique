@@ -11,9 +11,9 @@ interface Stem {
 
 const STEMS: Stem[] = [
   { name: 'Drums', emoji: '🥁', color: '#E60023' },
-  { name: 'Bass/808', emoji: '🎸', color: '#8B5CF6' },
-  { name: 'Melody', emoji: '🎹', color: '#06B6D4' },
-  { name: 'FX', emoji: '✨', color: '#F59E0B' },
+  { name: 'Bass/808', emoji: '🎸', color: '#B30000' },
+  { name: 'Melody', emoji: '🎹', color: '#FF4D4D' },
+  { name: 'FX', emoji: '✨', color: '#800000' },
 ];
 
 export default function InteractiveStemPlayer() {
